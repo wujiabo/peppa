@@ -8,6 +8,7 @@
         <module>peppa-module</module>
         <module>peppa-gateway</module>
         <module>peppa-config</module>
+        <module>peppa-dashboard</module>
     </modules>
     <groupId>com.wujiabo</groupId>
     <artifactId>peppa</artifactId>

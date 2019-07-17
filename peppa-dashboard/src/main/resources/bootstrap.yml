@@ -1,0 +1,24 @@
+server:
+  port: 8006
+
+spring:
+  application:
+    name: peppa-dashboard
+  profiles:
+    active: dev
+  cloud:
+    config:
+      fail-fast: true
+      name: ${spring.application.name}
+      profile: ${spring.profiles.active}
+      discovery:
+        enabled: true
+        service-id: peppa-config
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    healthcheck: true
+    service-url:
+      defaultZone: http://peppa-registry:8001/eureka/
