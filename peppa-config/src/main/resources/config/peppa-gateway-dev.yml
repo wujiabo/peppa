@@ -8,3 +8,7 @@ spring:
           uri: lb://peppa-demo2
           predicates:
             - Path=/peppa-demo2/**
+        - id: peppa-demo1
+          uri: lb://peppa-demo1
+          predicates:
+            - Path=/peppa-demo1/**
