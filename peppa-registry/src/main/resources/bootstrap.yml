@@ -4,13 +4,21 @@ server:
 spring:
   application:
     name: peppa-registry
+  cloud:
+    config:
+      enabled: false
 
 eureka:
   instance:
     hostname: peppa-registry
     prefer-ip-address: true
   client:
+    healthcheck: true
     register-with-eureka: false
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    eviction-interval-timer-in-ms: 4000
+    enable-self-preservation: false
+    renewal-percent-threshold: 0.9

@@ -1,0 +1,5 @@
+zuul:
+  routes:
+    api-demo2:
+      service-id: peppa-demo2
+      path: /api-demo2/**

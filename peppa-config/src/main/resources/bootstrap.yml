@@ -1,0 +1,21 @@
+server:
+  port: 8005
+
+spring:
+  application:
+    name: peppa-config
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config/
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    healthcheck: true
+    service-url:
+      defaultZone: http://peppa-registry:8001/eureka/
