@@ -1,5 +1,10 @@
-zuul:
-  routes:
-    api-demo2:
-      service-id: peppa-demo2
-      path: /api-demo2/**
+spring:
+  cloud:
+    gateway:
+      locator:
+        enabled: true
+      routes:
+        - id: peppa-demo2
+          uri: lb://peppa-demo2
+          predicates:
+            - Path=/peppa-demo2/**
