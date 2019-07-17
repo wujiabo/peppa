@@ -5,13 +5,13 @@ spring:
         enabled: true
       routes:
         - id: peppa-demo2
-          uri: lb://
+          uri: lb://localhost:8003
           predicates:
             - Path=/peppa-demo2/**
           filters:
             - StripPrefix=1
         - id: peppa-demo1
-          uri: lb://
+          uri: lb://localhost:8002
           predicates:
             - Path=/peppa-demo1/**
           filters:
