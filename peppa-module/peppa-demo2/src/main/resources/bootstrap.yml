@@ -1,0 +1,16 @@
+server:
+  port: 8003
+
+spring:
+  application:
+    name: peppa-demo2
+
+eureka:
+  client:
+    healthcheck: true
+    service-url:
+      defaultZone: http://peppa-registry:8001/eureka/
+
+feign:
+  hystrix:
+    enabled: true

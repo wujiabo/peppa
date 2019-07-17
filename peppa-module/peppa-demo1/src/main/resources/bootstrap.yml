@@ -1,0 +1,12 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: peppa-demo1
+
+eureka:
+  client:
+    healthcheck: true
+    service-url:
+      defaultZone: http://peppa-registry:8001/eureka/

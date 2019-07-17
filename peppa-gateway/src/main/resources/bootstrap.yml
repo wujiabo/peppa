@@ -1,0 +1,18 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: peppa-gateway
+
+eureka:
+  client:
+    healthcheck: true
+    service-url:
+      defaultZone: http://peppa-registry:8001/eureka/
+
+zuul:
+  routes:
+    api-a:
+      service-id: peppa-demo2
+      path: /api-demo2/**
