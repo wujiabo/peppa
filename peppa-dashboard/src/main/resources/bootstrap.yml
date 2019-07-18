@@ -1,5 +1,5 @@
 server:
-  port: 8006
+  port: 8004
 
 spring:
   application:
@@ -18,6 +18,8 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
+    instance-id: ${spring.application.name}:${eureka.instance.ip-address:${spring.cloud.client.ip-address}}:${server.port}
+    status-page-url-path: /hystrix
   client:
     healthcheck: true
     service-url:

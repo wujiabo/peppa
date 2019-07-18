@@ -1,5 +1,5 @@
 server:
-  port: 8005
+  port: 8002
 
 spring:
   application:
@@ -15,6 +15,7 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
+    instance-id: ${spring.application.name}:${eureka.instance.ip-address:${spring.cloud.client.ip-address}}:${server.port}
   client:
     healthcheck: true
     service-url:
