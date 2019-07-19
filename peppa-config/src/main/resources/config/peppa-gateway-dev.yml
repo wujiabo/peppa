@@ -10,9 +10,11 @@ spring:
             - Path=/peppa-demo2/**
           filters:
             - StripPrefix=1
+            - JwtFilter
         - id: peppa-demo1
           uri: lb://peppa-demo1
           predicates:
             - Path=/peppa-demo1/**
           filters:
             - StripPrefix=1
+            - JwtFilter

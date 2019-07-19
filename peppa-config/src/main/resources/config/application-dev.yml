@@ -1,6 +1,9 @@
 feign:
   hystrix:
     enabled: true
+  token:
+    propagate:
+      enabled: true
 
 management:
   endpoints:
