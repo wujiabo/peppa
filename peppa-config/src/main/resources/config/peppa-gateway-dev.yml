@@ -4,17 +4,17 @@ spring:
       locator:
         enabled: true
       routes:
-        - id: peppa-demo2
-          uri: lb://peppa-demo2
-          predicates:
-            - Path=/peppa-demo2/**
-          filters:
-            - StripPrefix=1
-            - JwtFilter
         - id: peppa-demo1
           uri: lb://peppa-demo1
           predicates:
-            - Path=/peppa-demo1/**
+            - Path=/gateway/peppa-demo1/**
           filters:
-            - StripPrefix=1
+            - StripPrefix=2
+            - JwtFilter
+        - id: peppa-demo2
+          uri: lb://peppa-demo2
+          predicates:
+            - Path=/gateway/peppa-demo2/**
+          filters:
+            - StripPrefix=2
             - JwtFilter
