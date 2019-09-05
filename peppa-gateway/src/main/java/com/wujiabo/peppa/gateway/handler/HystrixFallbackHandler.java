@@ -2,6 +2,7 @@ package com.wujiabo.peppa.gateway.handler;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.http.CacheControl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -28,6 +29,6 @@ public class HystrixFallbackHandler implements HandlerFunction<ServerResponse> {
         originalUris.ifPresent(originalUri -> log.error("网关执行请求:{}失败,hystrix服务降级处理" + originalUri));
 
         return ServerResponse.status(HttpStatus.INTERNAL_SERVER_ERROR.value())
-                .contentType(MediaType.TEXT_PLAIN).body(BodyInserters.fromObject("服务异常"));
+                .contentType(MediaType.APPLICATION_JSON_UTF8).body(BodyInserters.fromObject("服务异常"));
     }
 }
