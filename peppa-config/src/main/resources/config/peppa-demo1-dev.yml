@@ -1,1 +1,8 @@
 aaaa: fwefwef
+swagger:
+  ui:
+    enabled: true
+    title: demo1
+    desc: demo1 api
+    version: V1.0
+    basePackage: com.wujiabo.peppa.module.demo1

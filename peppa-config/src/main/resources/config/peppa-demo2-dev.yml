@@ -1,0 +1,7 @@
+swagger:
+  ui:
+    enabled: true
+    title: demo2
+    desc: demo2 api
+    version: V1.0
+    basePackage: com.wujiabo.peppa.module.demo2
