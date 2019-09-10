@@ -21,7 +21,7 @@ public class TestController {
     @GetMapping("/test")
     public String test(@RequestParam(value = "name", required = true) String name, HttpServletRequest servletRequest) {
         System.out.println("demo2@"+servletRequest.getHeader("x-token"));
-        return testFeign.hello(name);
+        return testFeign.test(name);
     }
 
 }
