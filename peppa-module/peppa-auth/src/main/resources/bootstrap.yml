@@ -1,0 +1,26 @@
+server:
+  port: 8007
+
+spring:
+  application:
+    name: peppa-auth
+  profiles:
+    active: dev
+  cloud:
+    config:
+      fail-fast: true
+      name: ${spring.application.name}
+      profile: ${spring.profiles.active}
+      discovery:
+        enabled: true
+        service-id: peppa-config
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${eureka.instance.ip-address:${spring.cloud.client.ip-address}}:${server.port}
+    status-page-url-path: /swagger-ui.html
+  client:
+    healthcheck: true
+    service-url:
+      defaultZone: http://peppa-registry:8001/eureka/

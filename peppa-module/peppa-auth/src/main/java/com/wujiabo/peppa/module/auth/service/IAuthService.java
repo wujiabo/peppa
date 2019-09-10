@@ -1,11 +1,9 @@
 package com.wujiabo.peppa.module.auth.service;
 
-import com.wujiabo.peppa.module.auth.dto.AuthRequestDTO;
+import com.wujiabo.peppa.module.auth.dto.LoginDTO;
 
 public interface IAuthService {
-    String login(AuthRequestDTO authRequest);
+    String login(LoginDTO loginDTO);
 
-    String refresh(String token);
-
-    boolean validate(String token, String resource);
+    void logout();
 }
