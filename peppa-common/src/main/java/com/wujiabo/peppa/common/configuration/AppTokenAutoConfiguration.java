@@ -19,6 +19,7 @@ public class AppTokenAutoConfiguration implements WebMvcConfigurer {
         registry.addInterceptor(getAppTokenInterceptor())
                 .addPathPatterns("/**")
                 .excludePathPatterns("/swagger-ui.html")
+                .excludePathPatterns("/swagger-resources/**")
                 .excludePathPatterns("/webjars/**")
                 .excludePathPatterns("/static/*");
     }
