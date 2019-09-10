@@ -2,6 +2,7 @@ package com.wujiabo.peppa.module.auth.controller;
 
 import com.wujiabo.peppa.module.auth.dto.LoginDTO;
 import com.wujiabo.peppa.module.auth.service.IAuthService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 
+@Api(value = "登录验证", tags = {"登录验证"})
 @RestController
 @RequestMapping(value = "/api/auth/v1")
 public class AuthController {

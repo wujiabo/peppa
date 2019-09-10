@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(name = "peppa-demo1", fallback = TestFeignFallback.class)
 public interface TestFeign {
-    @GetMapping("/test")
-    String hello(@RequestParam(value = "name", required = true) String name);
+    @GetMapping("/api/demo1/v1/test")
+    String test(@RequestParam(value = "name", required = true) String name);
 }

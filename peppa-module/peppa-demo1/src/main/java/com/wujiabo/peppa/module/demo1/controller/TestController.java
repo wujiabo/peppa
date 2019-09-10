@@ -12,17 +12,15 @@ import javax.servlet.http.HttpServletRequest;
 
 @Api(value = "测试controller", tags = {"测试api"})
 @RestController
+@RequestMapping(value = "/api/demo1/v1")
 public class TestController {
 
-    @Value("${aaaa}")
-    private String aaaa;
+    @Value("${swagger.ui.desc}")
+    private String desc;
 
-    @ApiOperation(value = "测试")
+    @ApiOperation(value = "测试", notes = "测试")
     @GetMapping("/test")
-    public String hello(@RequestParam(value = "name", required = true) String name, HttpServletRequest servletRequest) {
-        System.out.println("x-token1@"+servletRequest.getHeader("x-token"));
-        System.out.println("cloudclient start@" + aaaa);
-        return name + "===端口：8002被调用了===+" + aaaa;
+    public String test(@RequestParam(value = "name", required = true) String name, HttpServletRequest servletRequest) {
+        return name + "===" + desc + "===" + servletRequest.getHeader("x-token");
     }
-
 }

@@ -4,6 +4,24 @@ spring:
       locator:
         enabled: true
       routes:
+        - id: peppa-auth
+          uri: lb://peppa-auth
+          predicates:
+            - Path=/gateway/peppa-auth/**
+          filters:
+            - StripPrefix=2
+            - JwtFilter
+            # 限流配置
+            - name: RequestRateLimiter
+              args:
+                key-resolver: '#{@remoteAddrKeyResolver}'
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+            # 降级配置
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
         - id: peppa-demo1
           uri: lb://peppa-demo1
           predicates:

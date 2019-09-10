@@ -21,6 +21,7 @@ public class AppTokenAutoConfiguration implements WebMvcConfigurer {
                 .excludePathPatterns("/swagger-ui.html")
                 .excludePathPatterns("/swagger-resources/**")
                 .excludePathPatterns("/webjars/**")
+                .excludePathPatterns("/api/auth/v1/login")
                 .excludePathPatterns("/static/*");
     }
 }
