@@ -1,3 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.wujiabo.peppa.common.configuration.FeignTokenAutoConfiguration,\
-com.wujiabo.peppa.common.configuration.SwaggerAutoConfiguration
+com.wujiabo.peppa.common.configuration.SwaggerAutoConfiguration,\
+com.wujiabo.peppa.common.configuration.AppTokenAutoConfiguration
