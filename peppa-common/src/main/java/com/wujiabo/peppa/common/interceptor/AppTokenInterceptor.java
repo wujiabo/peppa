@@ -1,6 +1,6 @@
 package com.wujiabo.peppa.common.interceptor;
 
-import com.wujiabo.peppa.common.Constant.TokenConstants;
+import com.wujiabo.peppa.common.constant.TokenConstants;
 import com.wujiabo.peppa.common.annotation.PassToken;
 import com.wujiabo.peppa.common.annotation.Permission;
 import com.wujiabo.peppa.common.util.JwtUtils;

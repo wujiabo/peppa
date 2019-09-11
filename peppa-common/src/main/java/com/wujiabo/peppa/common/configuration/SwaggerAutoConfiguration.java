@@ -1,7 +1,7 @@
 package com.wujiabo.peppa.common.configuration;
 
 import com.netflix.hystrix.Hystrix;
-import com.wujiabo.peppa.common.Constant.TokenConstants;
+import com.wujiabo.peppa.common.constant.TokenConstants;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;

@@ -1,9 +1,8 @@
 package com.wujiabo.peppa.common.interceptor;
 
-import com.wujiabo.peppa.common.Constant.TokenConstants;
+import com.wujiabo.peppa.common.constant.TokenConstants;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 

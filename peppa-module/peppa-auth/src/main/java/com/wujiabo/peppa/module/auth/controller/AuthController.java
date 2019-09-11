@@ -1,6 +1,6 @@
 package com.wujiabo.peppa.module.auth.controller;
 
-import com.wujiabo.peppa.common.Constant.TokenConstants;
+import com.wujiabo.peppa.common.constant.TokenConstants;
 import com.wujiabo.peppa.module.auth.dto.LoginDTO;
 import com.wujiabo.peppa.module.auth.service.IAuthService;
 import io.swagger.annotations.Api;
