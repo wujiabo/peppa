@@ -1,8 +1,9 @@
 package com.wujiabo.peppa.module.auth.service.impl;
 
+import com.wujiabo.peppa.common.constant.TokenConstants;
+import com.wujiabo.peppa.common.util.JwtUtils;
 import com.wujiabo.peppa.module.auth.dto.LoginDTO;
 import com.wujiabo.peppa.module.auth.service.IAuthService;
-import com.wujiabo.peppa.module.auth.util.JwtUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class AuthService implements IAuthService {
         }
         //将salt保存到缓存中
         String salt = JwtUtils.generateSalt();
-        return JwtUtils.sign(loginDTO.getUserName(), salt, JwtUtils.TOKEN_TIMEOUT);
+        return JwtUtils.sign(loginDTO.getUserName(), salt, TokenConstants.TOKEN_TIMEOUT);
     }
 
     @Override

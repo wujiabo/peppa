@@ -1,5 +1,6 @@
 package com.wujiabo.peppa.module.demo2.controller;
 
+import com.wujiabo.peppa.common.annotation.Permission;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ public class TestController {
     TestFeign testFeign;
 
     @ApiOperation(value = "测试", notes = "测试")
+    @Permission("fffff")
     @GetMapping("/test")
     public String test(@RequestParam(value = "name", required = true) String name, HttpServletRequest servletRequest) {
         System.out.println("demo2@"+servletRequest.getHeader("x-token"));
