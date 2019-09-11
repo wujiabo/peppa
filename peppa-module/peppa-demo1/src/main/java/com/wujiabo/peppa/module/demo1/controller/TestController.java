@@ -1,5 +1,6 @@
 package com.wujiabo.peppa.module.demo1.controller;
 
+import com.wujiabo.peppa.common.annotation.Permission;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,5 +23,13 @@ public class TestController {
     @GetMapping("/test")
     public String test(@RequestParam(value = "name", required = true) String name, HttpServletRequest servletRequest) {
         return name + "===" + desc + "===" + servletRequest.getHeader("x-token");
+    }
+
+
+    @ApiOperation(value = "testPermission", notes = "testPermission")
+    @Permission("testPermission")
+    @GetMapping("/testPermission")
+    public String testPermission() {
+        return "testPermission";
     }
 }
