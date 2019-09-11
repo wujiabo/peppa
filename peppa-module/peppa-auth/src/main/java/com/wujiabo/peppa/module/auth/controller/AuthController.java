@@ -1,5 +1,6 @@
 package com.wujiabo.peppa.module.auth.controller;
 
+import com.wujiabo.peppa.common.Constant.TokenConstants;
 import com.wujiabo.peppa.module.auth.dto.LoginDTO;
 import com.wujiabo.peppa.module.auth.service.IAuthService;
 import io.swagger.annotations.Api;
@@ -16,7 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 @RequestMapping(value = "/api/auth/v1")
 public class AuthController {
-    private static final String HEADER_TOKEN_KEY = "x-token";
 
     @Autowired
     private IAuthService authService;
@@ -28,7 +28,7 @@ public class AuthController {
         if(StringUtils.isBlank(newToken)){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
-        response.setHeader(HEADER_TOKEN_KEY, newToken);
+        response.setHeader(TokenConstants.HEADER_TOKEN_KEY, newToken);
         return ResponseEntity.ok().build();
     }
 

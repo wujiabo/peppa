@@ -1,6 +1,7 @@
 package com.wujiabo.peppa.common.configuration;
 
 import com.netflix.hystrix.Hystrix;
+import com.wujiabo.peppa.common.Constant.TokenConstants;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -31,7 +32,6 @@ import java.util.List;
 @EnableConfigurationProperties(SwaggerProperties.class)
 @EnableSwagger2
 public class SwaggerAutoConfiguration extends WebMvcConfigurationSupport {
-    private static final String HEADER_TOKEN_KEY = "x-token";
     @Value("${swagger.ui.title}")
     private String title;
     @Value("${swagger.ui.desc}")
@@ -50,7 +50,7 @@ public class SwaggerAutoConfiguration extends WebMvcConfigurationSupport {
         //  ==================== 需要的参数 START ====================
         List<Parameter> pars = new ArrayList<>();
         ParameterBuilder token = new ParameterBuilder();
-        token.name(HEADER_TOKEN_KEY).description("token").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
+        token.name(TokenConstants.HEADER_TOKEN_KEY).description("token").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
         pars.add(token.build());
         //  ==================== 需要的参数 END ====================
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())

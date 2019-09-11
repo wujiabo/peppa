@@ -1,5 +1,6 @@
 package com.wujiabo.peppa.common.interceptor;
 
+import com.wujiabo.peppa.common.Constant.TokenConstants;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import org.springframework.context.annotation.Configuration;
@@ -12,12 +13,11 @@ import javax.servlet.http.HttpServletRequest;
  * feign传递token
  */
 public class FeignTokenInterceptor implements RequestInterceptor {
-    private static final String HEADER_TOKEN_KEY = "x-token";
 
     @Override
     public void apply(RequestTemplate requestTemplate) {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-        requestTemplate.header(HEADER_TOKEN_KEY, request.getHeader(HEADER_TOKEN_KEY));
+        requestTemplate.header(TokenConstants.HEADER_TOKEN_KEY, request.getHeader(TokenConstants.HEADER_TOKEN_KEY));
     }
 
 }
